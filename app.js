@@ -1,10 +1,10 @@
-
+// Import required packages
 require('dotenv').config()
-
 const { readFileSync, writeFileSync } = require('jsonfile')
 const { Webhook, MessageBuilder } = require("discord-webhook-node")
 const rss = new (require('rss-parser'))()
 
+// Initialize Discord webhook and asset library
 const hook = new Webhook(process.env.WEBHOOK)
 const library = {
     ambu: 'https://files.thijmenheuvelink.nl/api/public/dl/ginQaA4N/ambu.png',
@@ -14,6 +14,7 @@ const library = {
     trauma: 'https://files.thijmenheuvelink.nl/api/public/dl/ginQaA4N/trauma.png',
 }
 
+// Check if content matches an asset keyword and return the corresponding URL
 function assetMatch(content) {
     const query = content.toLowerCase()
 
@@ -24,11 +25,13 @@ function assetMatch(content) {
     return library['ongeval']
 }
 
+// Poll the RSS feed for new items and send them to the Discord webhook
 function poll() {
     rss.parseURL(process.env.RSS)
         .then(({ items }) => {
             let cache = readFileSync('./cache.json')
 
+            // Check if item has already been sent and send new items to webhook
             items.reverse().forEach(item => {
                 if (cache.find(({ guid }) => guid == item.guid)) return
 
@@ -46,12 +49,15 @@ function poll() {
                 hook.send(embed)
             })
 
+            // Update cache with newly sent items
             writeFileSync('./cache.json', cache)
             console.log('Done, next poll in 15m.\n')
         })
 }
 
+// Initialize polling and set interval for polling every 15 minutes
 poll()
 setInterval(() => poll(), 15 * 60 * 1000)
 
+// Handle uncaught exceptions
 process.on('uncaughtException', err => console.error(err))
