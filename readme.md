@@ -1,6 +1,8 @@
 
 # AlarmHook
 
+[English](https://github.com/ThijmenGThN/alarmhook/blob/main/readme.english.md)
+
 Een integratie voor de RSS feed van **alarmingen.nl** die data verstuurd naar de door jou ingestelde webhook op **Discord**.
 
 ![](https://files.thijmenheuvelink.nl/api/public/dl/HzKtVfIr/trauma.png)
