@@ -21,6 +21,9 @@ Een integratie voor de RSS feed van **alarmingen.nl** die data verstuurd naar de
 ## Opzetten met Docker
 
 1. Download de source code.
-2. Voer `docker-compose up -d` uit.
+2. Hernoem ` sample.env ` naar ` .env `.
+3. Maak een webhook aan en kopieer de URL.
+4. Vervang de data in de ` .env `.
+5. Voer `docker-compose up -d` uit.
 
 > Hulp nodig? [support@thijmenheuvelink.nl](mailto:support@thijmenheuvelink.nl)
