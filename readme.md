@@ -5,8 +5,8 @@
 
 Een integratie voor de RSS feed van **alarmingen.nl** die data verstuurd naar de door jou ingestelde webhook op **Discord**.
 
-![](https://files.thijmenheuvelink.nl/api/public/dl/HzKtVfIr/trauma.png)
-![](https://files.thijmenheuvelink.nl/api/public/dl/HzKtVfIr/brand.png)
+![](https://i.imgur.com/ERQZGdw.png)
+![](https://i.imgur.com/mtQiGiS.png)
 
 > Opzetten kan via de volgende twee opties:
 
