@@ -16,9 +16,8 @@ Een integratie voor de RSS feed van **alarmingen.nl** die data verstuurd naar de
 2. Hernoem ` sample.env ` naar ` .env `.
 3. Maak een webhook aan en kopieer de URL.
 4. Vervang de data in de ` .env `.
-5. Zorg dat NodeJS is geinstalleerd.
-6. Installeer de benodigheden met ` npm i ` of ` yarn `.
-7. Start de service met ` npm start ` of ` yarn start `.
+5. Zorg dat Rust is geinstalleerd.
+6. Start de service met ` cargo run --release ` of compileer naar een binary.
 
 ## Opzetten met Docker
 

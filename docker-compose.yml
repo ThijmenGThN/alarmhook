@@ -1,9 +1,9 @@
-version: '3'
 
 services:
   app:
-    image: node:lts-alpine
+    image: rust:slim
     restart: unless-stopped
     working_dir: /usr/app
     volumes: [./:/usr/app]
-    command: yarn ci
+    command: cargo run --release
+    env_file: .env
