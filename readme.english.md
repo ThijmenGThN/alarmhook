@@ -4,8 +4,12 @@
 
 An integration for the RSS feed of **alarmingen.nl** which sends data to the by you configured webhook on **Discord**.
 
-![](https://files.thijmenheuvelink.nl/api/public/dl/HzKtVfIr/trauma.png)
-![](https://files.thijmenheuvelink.nl/api/public/dl/HzKtVfIr/brand.png)
+<div align="center">
+
+![Preview Ongeval](assets/previews/ongeval.png)
+![Preview Ambulance](assets/previews/ambulance.png)
+
+</div>
 
 > Setup can be achieved by the following options:
 

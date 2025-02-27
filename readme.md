@@ -5,8 +5,12 @@
 
 Een integratie voor de RSS feed van **alarmingen.nl** die data verstuurd naar de door jou ingestelde webhook op **Discord**.
 
-![](https://i.imgur.com/ERQZGdw.png)
-![](https://i.imgur.com/mtQiGiS.png)
+<div align="center">
+
+![Preview Ongeval](assets/previews/ongeval.png)
+![Preview Ambulance](assets/previews/ambulance.png)
+
+</div>
 
 > Opzetten kan via de volgende twee opties:
 
