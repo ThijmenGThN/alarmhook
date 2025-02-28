@@ -5,8 +5,8 @@
 An integration for the RSS feed of **alarmingen.nl** which sends data to the by you configured webhook on **Discord**.
 
 <br/><div align="center">
-  <img width="35.1%" src="assets/previews/ongeval.png">
-  <img width="30%" src="assets/previews/ambulance.png">
+  <img width="46.75%" src="assets/previews/ongeval.png">
+  <img width="40%" src="assets/previews/ambulance.png">
 </div><br/>
 
 > Setup can be achieved by the following options:
