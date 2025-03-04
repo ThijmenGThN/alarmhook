@@ -64,12 +64,12 @@ async fn poll() -> Result<(), Box<dyn Error>> {
         }
 
         let title = entry
-            .title
+            .summary
             .as_ref()
             .map(|t| t.content.clone())
             .unwrap_or_default();
         let description = entry
-            .summary
+            .title
             .as_ref()
             .map(|t| t.content.clone())
             .unwrap_or_default();
@@ -83,10 +83,10 @@ async fn poll() -> Result<(), Box<dyn Error>> {
         let image_url = asset_match(&title_clone);
 
         let embed = Embed {
-            title: description,
+            title,
             description: format!(
                 "{}\n\n[Bekijk de P2000 melding op Alarmeringen.nl]({})",
-                title, link
+                description, link
             ),
             timestamp,
             image: Image {
