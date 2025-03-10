@@ -1,4 +1,5 @@
 use feed_rs::parser;
+use ollama_rs::Ollama;
 use reqwest;
 use serde::Serialize;
 use std::error::Error;
@@ -38,7 +39,7 @@ fn asset_match(content: &str) -> &str {
     }
 }
 
-async fn poll() -> Result<(), Box<dyn Error>> {
+async fn poll(ollama: Ollama) -> Result<(), Box<dyn Error>> {
     let cache_str = tokio::fs::read_to_string("./cache.json")
         .await
         .unwrap_or_default();
@@ -119,12 +120,15 @@ async fn poll() -> Result<(), Box<dyn Error>> {
 #[tokio::main]
 async fn main() {
     dotenv::dotenv().ok();
-    if let Err(e) = poll().await {
+    let ollama = Ollama::default();
+
+    if let Err(e) = poll(ollama).await {
         eprintln!("Error in initial poll: {}", e);
     }
+
     loop {
         time::sleep(time::Duration::from_secs(15 * 60)).await;
-        if let Err(e) = poll().await {
+        if let Err(e) = poll(ollama).await {
             eprintln!("Error in poll: {}", e);
         }
     }

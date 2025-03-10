@@ -7,3 +7,8 @@ services:
     volumes: [./:/usr/app]
     command: cargo run --release
     env_file: .env
+  ollama:
+    image: ollama/ollama:0.5.13
+    restart: unless-stopped
+    ports: ["11434:11434"]
+    volumes: [./ollama:/root/.ollama]
